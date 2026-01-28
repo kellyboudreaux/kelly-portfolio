@@ -1,66 +1,111 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Work history - operations case studies
+// AI Portfolio builds
+const aiBuilds = [
+  {
+    title: 'Job Intelligence System',
+    icon: '&#x1F50D;',
+    iconBg: '#1a365d',
+    what: 'AI-augmented evaluation system running an 87-point scoring rubric that delivers analytical depth impossible to replicate manually. Pulls new postings, runs deep analysis, scores against 87 criteria, and routes structured evaluations automatically.',
+    how: 'n8n + Perplexity AI + Airtable automation pipeline',
+    metrics: ['87-Point Rubric', '17.5 hrs/week Saved', 'Zero Missed Signals']
+  },
+  {
+    title: 'Multi-API Content Pipeline',
+    icon: '&#x26A1;',
+    iconBg: '#553c9a',
+    what: 'Multi-API orchestration producing marketing videos at $0.02/video with consistent quality at scale. Four APIs coordinated in sequence, each handling a discrete production step.',
+    how: 'Claude + Replicate + ElevenLabs + ffmpeg',
+    metrics: ['$0.02/video', '7.5 hrs/week Saved', 'Consistent Quality at Scale']
+  },
+  {
+    title: 'AI Development Environment',
+    icon: '&#x1F9E0;',
+    iconBg: '#234e52',
+    what: 'Custom Claude Code architecture with hooks, skills, MCP integrations, and cross-session memory that compounds output quality across every work session. iPhone capture syncs thoughts to active sessions in real time.',
+    how: 'Custom skills + Apple Notes MCP + Airtable logging + Slack notifications + project memory system',
+    metrics: ['Cross-Session Memory', 'iPhone Capture', 'Auto-Logging']
+  }
+];
+
+// Work history - reframed with tech-stacking thread
 const workHistory = [
   {
-    company: 'The Retail Performance Company (RPC)',
-    role: 'Director of Operations',
-    years: '2022 - 2025',
+    company: 'The Retail Performance Company',
+    descriptor: 'BMW Joint Venture L&D Agency',
+    role: 'VP of Operations',
+    years: '2022 - 2024',
     logo: '/images/rpc-logo.jpg',
     problem: 'Training operations for 350+ BMW dealerships were fragmented across spreadsheets with no visibility, inconsistent processes, and mounting overhead.',
-    solution: 'Built centralized training coordination system in Airtable with Zapier automations. Created standardized processes replicated org-wide. Introduced operational technology platforms driving adoption across all locations.',
-    metrics: ['350+ Locations', '50% Overhead Cut', '20%+ Margin Increase']
+    solution: 'Evaluated, selected, and drove org-wide adoption of a 5-platform tech stack (Stripe, Airtable, Zapier, Asana, Slack). Built Airtable/Zapier automation workflows that cut overhead 50% and were replicated org-wide as the standard. Built analytics infrastructure enabling 20%+ margin improvements through data-informed stakeholder engagement.',
+    metrics: ['350+ Locations', '50% Overhead Cut', '20%+ Margin Increase', '10x Field Reporting']
+  },
+  {
+    company: 'Balance',
+    descriptor: '',
+    role: 'Head of Operations & Experience',
+    years: '2024',
+    logo: '',
+    problem: 'New product needed rapid feedback systems and scalable QA processes to iterate on real user behavior.',
+    solution: 'Designed and implemented feedback capture systems producing 50% increase in customer data within 1 month. Led implementation of scalable QA processes achieving 30% reduction in testing cycle time within 6 months.',
+    metrics: ['50% More Customer Data', '30% Faster Testing Cycles']
+  },
+  {
+    company: 'LC Co Quarter Horses',
+    descriptor: 'Equine Sport Facility',
+    role: 'Head of Operations (Fractional)',
+    years: '2020 - 2025',
+    logo: '/images/lc-logo.png',
+    problem: 'Legacy breeding facility trapped the owner in day-to-day scheduling, tracking, and logistics. All operations ran on manual record-keeping.',
+    solution: 'Re-engineered from manual record-keeping to integrated digital systems. Modernized scheduling, animal tracking, logistics coordination, and reporting.',
+    metrics: ['50% Owner Bandwidth Freed', 'Full Digital Transformation']
   },
   {
     company: 'IATSE Film & TV Union',
-    role: 'Director of Business Operations',
+    descriptor: 'Film & TV Agency',
+    role: 'Head of Business Operations',
     years: '2017 - 2020',
     logo: '/images/iatse-logo.png',
-    problem: 'Six field reps managing 10-30 simultaneous productions with 1,100-2,500 members had no centralized tracking. Contract enforcement was inconsistent, compliance documentation scattered.',
-    solution: 'Designed field operations tracking system serving multiple stakeholders: training tool for junior staff, compliance documentation for EEOC/OSHA/federal labor board, audit trail for contract enforcement, and data source for negotiations.',
+    problem: 'Six field reps managing 10-30 simultaneous productions with no centralized tracking. Contract enforcement inconsistent, compliance documentation scattered.',
+    solution: 'Designed a multi-stakeholder data system that served compliance, field ops, auditors, and federal agencies simultaneously. One system, five audiences. Introduced Slack and digital coordination in an organization running on manual processes. Leveraged analytics to deliver first contract improvements in 15+ years.',
     metrics: ['$4-5M Budget', '8-12 Staff', 'First Contract Wins in 15+ Years']
   },
   {
-    company: 'LC Co & Quarter Horses',
-    role: 'Operations Manager',
-    years: '2021 - 2022',
-    logo: '/images/lc-logo.png',
-    problem: 'Legacy breeding facility operations trapped owner in day-to-day scheduling, tracking, and logistics instead of strategic work.',
-    solution: 'Re-engineered and digitized facility operations. Modernized scheduling, tracking, and logistics systems.',
-    metrics: ['50%+ Owner Bandwidth Freed', 'Digitized Operations']
-  },
-  {
     company: 'The Soapbox Lounge',
+    descriptor: 'Bar & Entertainment Venue',
     role: 'Operations Manager',
     years: '2012 - 2014',
     logo: '/images/soapbox-logo.png',
     problem: 'High-profile event operations lacked standardized workflows. Scheduling accuracy and team communication were inconsistent.',
-    solution: 'Managed full operational lifecycle for 100+ events. Implemented workflow systems creating standardized processes adopted across all event operations.',
+    solution: 'Designed and implemented workflow and scheduling systems for 100+ high-profile events. The first iteration of a career-long pattern of building technology-driven operational infrastructure.',
     metrics: ['100+ Events', '40% Efficiency Gain']
   }
 ];
 
 // Hero metrics
 const metrics = [
+  { value: '30+', label: 'hrs/week AI Gains' },
   { value: '350+', label: 'Sites Managed' },
-  { value: '$4-5M', label: 'Budgets' },
-  { value: '50%', label: 'Overhead Cut' },
-  { value: '10+', label: 'Years' }
+  { value: '$0.02', label: 'Per Video Pipeline' },
+  { value: '10+', label: 'Years Tech-Stacking' }
 ];
 
-// Tools/capabilities
+// Capabilities
 const capabilities = [
-  'Multi-Unit Operations',
+  'AI Workflow Automation',
+  'Multi-API Orchestration',
+  'Technology Evaluation & Adoption',
+  'Operations at Scale',
+  'Digital Transformation',
+  'Process Automation',
   'Training & Development',
   'Budget & P&L Management',
-  'Compliance & QA',
-  'Process Automation',
   'Change Management'
 ];
 ---
 
-<BaseLayout title="Kelly Boudreaux | Operations Leader">
+<BaseLayout title="Kelly Boudreaux | AI Operations Leader">
   <!-- Hero Section -->
   <section class="relative min-h-screen w-full bg-bg-primary overflow-hidden">
     <div class="container-main pt-8 pb-16 lg:pt-12 lg:pb-24">
@@ -68,6 +113,7 @@ const capabilities = [
       <nav class="flex items-center justify-between mb-16 lg:mb-24">
         <span class="text-2xl lg:text-3xl font-bold text-accent-yellow uppercase tracking-wide">Kelly Boudreaux</span>
         <div class="flex items-center gap-6 text-sm">
+          <a href="#built" class="text-text-secondary hover:text-accent-yellow">AI Builds</a>
           <a href="#work" class="text-text-secondary hover:text-accent-yellow">Work</a>
           <a href="#about" class="text-text-secondary hover:text-accent-yellow">Story</a>
           <a href="#contact" class="text-accent-yellow hover:text-accent-yellow-hover">Connect</a>
@@ -81,7 +127,7 @@ const capabilities = [
 
       <!-- Giant headline -->
       <div class="mb-16 lg:mb-24">
-        <h1 class="headline-giant">Scale.</h1>
+        <h1 class="headline-giant">Build.</h1>
       </div>
 
       <!-- Main content grid -->
@@ -89,13 +135,13 @@ const capabilities = [
         <!-- Text content -->
         <div class="space-y-6 max-w-lg">
           <h2 class="text-3xl lg:text-4xl font-bold text-text-primary leading-tight">
-            Operations. Systems. Results.
+            AI Systems. Operations. Results.
           </h2>
           <p class="text-lg text-text-secondary leading-relaxed">
-            I build scalable operational systems that create organizational leverage.
+            I build AI-powered operational systems that raise both the quality ceiling and speed of delivery.
           </p>
-          <a href="#work" class="btn-primary">
-            See My Work
+          <a href="#built" class="btn-primary">
+            See What I've Built
           </a>
         </div>
 
@@ -114,8 +160,8 @@ const capabilities = [
                   <span class="text-black font-bold text-sm">10+</span>
                 </div>
                 <div>
-                  <p class="text-sm font-semibold text-text-primary">Years in Operations</p>
-                  <p class="text-xs text-text-secondary">Operator & Leader</p>
+                  <p class="text-sm font-semibold text-text-primary">Years Tech-Stacking Ops</p>
+                  <p class="text-xs text-text-secondary">Now Powered by AI</p>
                 </div>
               </div>
             </div>
@@ -137,7 +183,7 @@ const capabilities = [
 
       <!-- Scroll indicator -->
       <div class="flex justify-center mt-16">
-        <a href="#work" class="flex flex-col items-center gap-2 text-text-secondary hover:text-accent-yellow">
+        <a href="#built" class="flex flex-col items-center gap-2 text-text-secondary hover:text-accent-yellow">
           <span class="text-sm">Scroll to explore</span>
           <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
@@ -147,55 +193,120 @@ const capabilities = [
     </div>
   </section>
 
+  <!-- AI Portfolio Section -->
+  <section id="built" class="w-full bg-bg-surface section">
+    <div class="container-main">
+      <!-- Giant headline -->
+      <div class="mb-24 lg:mb-32">
+        <h2 class="headline-giant">Built.</h2>
+      </div>
+
+      <div class="container-narrow">
+        <p class="text-lg text-text-secondary leading-relaxed mb-16 max-w-2xl">
+          AI didn't change what I do. It changed how well I can do it. These are production systems I designed and built, not demos or experiments. Each one solves a real operational problem with measurable outcomes.
+        </p>
+
+        <div class="space-y-16 lg:space-y-20">
+          {aiBuilds.map((build) => (
+            <div class="flex gap-6 lg:gap-8">
+              <!-- Icon badge -->
+              <div class="ai-icon-badge" style={`background-color: ${build.iconBg};`}>
+                <span set:html={build.icon}></span>
+              </div>
+
+              <!-- Content -->
+              <div class="flex-1 space-y-4 pt-1">
+                <h3 class="text-lg font-bold text-text-primary">{build.title}</h3>
+                <p class="text-lg text-text-primary leading-relaxed">{build.what}</p>
+                <p class="text-sm text-text-secondary">
+                  <span class="text-accent-yellow font-medium">Stack:</span> {build.how}
+                </p>
+                <div class="flex flex-wrap items-center gap-3 pt-2">
+                  {build.metrics.map((metric) => (
+                    <span class="metric-highlight">{metric}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Total impact callout -->
+        <div class="mt-16 py-8 px-8 card-elevated rounded-lg">
+          <p class="text-2xl lg:text-3xl font-medium text-text-primary leading-snug">
+            <span class="text-accent-yellow">30+ hours/week</span> in AI-driven productivity gains with measurably higher output quality.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Work Section -->
-  <section id="work" class="w-full bg-bg-surface section">
+  <section id="work" class="w-full bg-bg-primary section">
     <div class="container-main">
       <!-- Giant headline -->
       <div class="mb-24 lg:mb-32">
         <h2 class="headline-giant">Work.</h2>
       </div>
 
-      <!-- Work history - matching Bree's portfolio layout -->
-      <div class="container-narrow space-y-16 lg:space-y-20">
-        {workHistory.map((job) => (
-          <div class="flex gap-6 lg:gap-8">
-            <!-- Logo -->
-            <div class="flex-shrink-0">
-              <img src={job.logo} alt={`${job.company} logo`} class="w-16 h-16 lg:w-20 lg:h-20 rounded-lg object-cover" />
-            </div>
+      <div class="container-narrow">
+        <p class="text-lg text-text-secondary leading-relaxed mb-16 max-w-2xl">
+          The same pattern across a decade: find the bottleneck, select the technology, build the system, train the team, measure the impact. AI is the latest (and most powerful) layer.
+        </p>
 
-            <!-- Content -->
-            <div class="flex-1 space-y-4 pt-1">
-              <!-- Company / Role / Years -->
-              <div class="flex flex-wrap items-center gap-2 text-lg">
-                <span class="font-bold text-text-primary">{job.company}</span>
-                <span class="text-text-secondary">·</span>
-                <span class="text-text-secondary">{job.role}</span>
-                <span class="text-text-secondary">·</span>
-                <span class="text-text-secondary">{job.years}</span>
+        <div class="space-y-16 lg:space-y-20">
+          {workHistory.map((job) => (
+            <div class="flex gap-6 lg:gap-8">
+              <!-- Logo -->
+              <div class="flex-shrink-0">
+                {job.logo ? (
+                  <img src={job.logo} alt={`${job.company} logo`} class="w-16 h-16 lg:w-20 lg:h-20 rounded-lg object-cover" />
+                ) : (
+                  <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-lg bg-bg-elevated border border-border-default flex items-center justify-center">
+                    <span class="text-2xl font-bold text-text-secondary">{job.company.charAt(0)}</span>
+                  </div>
+                )}
               </div>
 
-              <!-- Problem -->
-              <p class="text-lg text-text-primary leading-relaxed">{job.problem}</p>
+              <!-- Content -->
+              <div class="flex-1 space-y-4 pt-1">
+                <!-- Company / Role / Years -->
+                <div class="flex flex-wrap items-center gap-2 text-lg">
+                  <span class="font-bold text-text-primary">{job.company}</span>
+                  {job.descriptor && (
+                    <>
+                      <span class="text-text-secondary">·</span>
+                      <span class="text-text-secondary text-base">{job.descriptor}</span>
+                    </>
+                  )}
+                  <span class="text-text-secondary">·</span>
+                  <span class="text-text-secondary">{job.role}</span>
+                  <span class="text-text-secondary">·</span>
+                  <span class="text-text-secondary">{job.years}</span>
+                </div>
 
-              <!-- Solution -->
-              <p class="text-lg text-text-primary leading-relaxed">{job.solution}</p>
+                <!-- Problem -->
+                <p class="text-lg text-text-primary leading-relaxed">{job.problem}</p>
 
-              <!-- Metrics -->
-              <div class="flex flex-wrap items-center gap-3 pt-2">
-                {job.metrics.map((metric) => (
-                  <span class="metric-highlight">{metric}</span>
-                ))}
+                <!-- Solution -->
+                <p class="text-lg text-text-primary leading-relaxed">{job.solution}</p>
+
+                <!-- Metrics -->
+                <div class="flex flex-wrap items-center gap-3 pt-2">
+                  {job.metrics.map((metric) => (
+                    <span class="metric-highlight">{metric}</span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="w-full bg-bg-primary section">
+  <section id="about" class="w-full bg-bg-surface section">
     <div class="container-main">
       <!-- Giant headline -->
       <div class="mb-16 lg:mb-24">
@@ -210,7 +321,7 @@ const capabilities = [
             <!-- Capabilities strip below image -->
             <div class="mt-6 flex flex-wrap gap-2">
               {capabilities.map((cap) => (
-                <span class="text-xs px-3 py-1.5 rounded-full bg-bg-surface border border-border-default text-text-secondary">{cap}</span>
+                <span class="text-xs px-3 py-1.5 rounded-full bg-bg-primary border border-border-default text-text-secondary">{cap}</span>
               ))}
             </div>
           </div>
@@ -220,47 +331,36 @@ const capabilities = [
         <div class="lg:col-span-7">
           <!-- Bio highlights -->
           <p class="text-lg font-semibold text-text-primary mb-8">
-            350+ Sites · $4-5M Budgets · Film/TV & Automotive Industries
+            AI Systems Builder · 350+ Sites · $4-5M Budgets · Film/TV, Automotive, Tech
           </p>
 
           <!-- Narrative -->
           <div class="space-y-6 text-lg text-text-secondary leading-relaxed">
-            <p>I build scalable operational systems that create organizational leverage.</p>
-
             <p>
-              At a film union, I designed a tracking system for six reps managing thousands of crew members
-              that served compliance, training, and contract enforcement. It delivered the first improvements
-              to contract language in over 15 years.
+              I've been tech-stacking operations for over a decade. Airtable, Zapier, Stripe, custom tracking systems across 350+ locations. Now I build AI-powered systems that don't just save time; they raise the quality ceiling of what operations can deliver.
             </p>
 
             <p>
-              At BMW's training agency, I overhauled coordination for 350 dealerships, cutting overhead by half
-              with Airtable and Zapier automations that were replicated org-wide.
+              The throughline across film, automotive, equine, and tech? I find the operational bottleneck, build the system to eliminate it, and make it scalable. The tools just got a lot more powerful.
             </p>
 
             <p>
-              I manage operations at scale with limited resources. I've handled $4-5M operating budgets and
-              led 8-12 staff across shared services, training, compliance, field operations, and administration.
-              I build systems that enable small teams to deliver enterprise-level impact.
+              At a BMW joint venture, I evaluated and adopted a 5-platform tech stack across 350+ dealerships. Cut overhead 50%. At a film/TV union, I designed a data system that served compliance, field ops, auditors, and federal agencies simultaneously. It enabled the first contract improvements in 15+ years.
             </p>
 
             <p>
-              What drives me: working with leadership that's actually committed to operational transformation,
-              not change theater. I thrive in environments ready to level up, whether building new systems,
-              optimizing what exists, or rebuilding after setbacks.
+              In the last year, I've built multi-API automation pipelines producing content at $0.02/video. Designed an evaluation system running an 87-point scoring rubric that delivers analysis no manual process could match. Built a custom AI development environment with cross-session memory that compounds quality across every work session.
             </p>
 
             <p>
-              I don't just use tools. I evaluate, select, and drive org-wide adoption. Introduced Stripe,
-              Airtable, Asana, Slack, and Zapier across organizations. Now expanding into AI-powered
-              workflow automation with Claude, Perplexity, and ChatGPT.
+              AI didn't change what I do. It changed how well I can do it, and how fast.
             </p>
           </div>
 
           <!-- Quote -->
           <div class="mt-12 py-8 px-8 card-elevated rounded-lg">
             <p class="text-2xl lg:text-3xl font-medium text-text-primary leading-snug italic">
-              "Give me a problem, and I'll wake up thinking about how to solve it."
+              "The real value of AI is quality. Speed is just the side effect."
             </p>
           </div>
 
@@ -269,16 +369,16 @@ const capabilities = [
             <h3 class="text-2xl font-bold text-text-primary mb-8">What I'm Looking For</h3>
             <div class="space-y-4 text-lg text-text-secondary leading-relaxed">
               <p>
-                <span class="text-accent-yellow font-medium">Role:</span> Chief of Staff, Director, or Head of Operations managing 2-10 people
+                <span class="text-accent-yellow font-medium">Role:</span> Director/VP of Operations or Head of Business Operations
               </p>
               <p>
-                <span class="text-accent-yellow font-medium">Company:</span> Profitable with $4-5M+ ARR and experienced leadership genuinely committed to operational excellence
+                <span class="text-accent-yellow font-medium">Company:</span> Profitable, AI-forward company where building systems that actually work matters more than talking about transformation
               </p>
               <p>
-                <span class="text-accent-yellow font-medium">Location:</span> Remote/hybrid preferred, or on-site in Colorado or Texas
+                <span class="text-accent-yellow font-medium">Location:</span> Denver, CO · Open to remote
               </p>
               <p>
-                <span class="text-accent-yellow font-medium">Industries:</span> Open to any, with particular fit for film/TV studios/vendors/venues, SaaS, or performance equine industry
+                <span class="text-accent-yellow font-medium">Industries:</span> AI-forward tech/SaaS, AI-native companies, or established companies needing technology-forward operational transformation
               </p>
             </div>
           </div>
@@ -288,7 +388,7 @@ const capabilities = [
   </section>
 
   <!-- Connect Section -->
-  <footer id="contact" class="w-full bg-bg-surface section">
+  <footer id="contact" class="w-full bg-bg-primary section">
     <div class="container-main">
       <!-- Giant headline -->
       <div class="mb-16 lg:mb-24">
@@ -297,8 +397,8 @@ const capabilities = [
 
       <div class="max-w-2xl">
         <div class="text-xl text-text-secondary mb-12 space-y-1">
-          <p>Building operational infrastructure?</p>
-          <p>Scaling a team?</p>
+          <p>Building AI-powered operational systems?</p>
+          <p>Scaling automation across your org?</p>
           <p>Let's talk.</p>
         </div>
 
