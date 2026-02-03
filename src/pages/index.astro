@@ -4,12 +4,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 // AI Portfolio builds
 const aiBuilds = [
   {
-    title: 'Job Intelligence System',
+    title: 'Multi-Agent Publishing Pipeline',
+    icon: '&#x1F4DA;',
+    iconBg: '#744210',
+    what: 'Multi-agent orchestration system that takes a title from queue to publish-ready in one run. Opus orchestrator dispatches Sonnet workers for content generation, cover art, interior layout, and packaging. Pipeline state management with optimistic locking for concurrent sessions.',
+    how: 'Python + Claude (Opus/Sonnet) + Replicate FLUX + Airtable state management',
+    metrics: ['27 Titles Produced', '$8.74→$2.34/title', '3 Architectures Tested']
+  },
+  {
+    title: 'Full-Cycle Job Intelligence System',
     icon: '&#x1F50D;',
     iconBg: '#1a365d',
-    what: 'AI-augmented evaluation system running an 87-point scoring rubric that delivers analytical depth impossible to replicate manually. Pulls new postings, runs deep analysis, scores against 87 criteria, and routes structured evaluations automatically.',
-    how: 'n8n + Perplexity AI + Airtable automation pipeline',
-    metrics: ['87-Point Rubric', '17.5 hrs/week Saved', 'Zero Missed Signals']
+    what: 'Complete automation loop from job discovery to post-application triage. Pre-application: pulls new postings, scores against 87-point rubric, routes structured evaluations. Post-application: Claude Chrome Extension triages inbox responses automatically.',
+    how: 'n8n + Perplexity AI + Claude Chrome Extension + Airtable',
+    metrics: ['87-Point Rubric', '20 hrs/week Saved', 'Full Pre/Post Automation']
+  },
+  {
+    title: 'Cross-Session Collaboration MCP',
+    icon: '&#x1F91D;',
+    iconBg: '#2c5282',
+    what: 'MCP server enabling two humans to share live project context across independent Claude instances. Async handoffs, shared task tracking, append-only decision logs, and key-value context store. Built for real joint ventures, not demos.',
+    how: 'Python + FastMCP v2 + Supabase PostgreSQL',
+    metrics: ['7 MCP Tools', 'Real-time Handoffs', 'Zero Cloud Cost']
   },
   {
     title: 'Multi-API Content Pipeline',
